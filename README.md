@@ -13,7 +13,7 @@ For full installation use:
 ```
 git clone https://github.com/Vnet-as/smart-host-postfix-docker.git
 cd smart-host-postfix-docker
-docker build -t lirt/smart-host-postfix-docker . .
+docker build -t lirt/smart-host-postfix-docker .
 ```
 
 Or download docker image from dockerhub with:
