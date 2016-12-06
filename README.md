@@ -13,7 +13,13 @@ For full installation use:
 ```
 git clone https://github.com/Vnet-as/smart-host-postfix-docker.git
 cd smart-host-postfix-docker
-docker build .
+docker build -t lirt/smart-host-postfix-docker . .
+```
+
+Or download docker image from dockerhub with:
+
+```
+docker pull lirt/smart-host-postfix-docker
 ```
 
 ## Running
@@ -37,5 +43,5 @@ docker run \
    -e USERNAME=relay-acc@example.com \
    -e PASSWORD=abcd1234 \
    -e MYNETWORKS="172.20.100.0/24 172.20.101.12 172.20.101.13" \
-   -d Lirt/Smart-Host-Postfix
+   -d lirt/smart-host-postfix-docker
 ```
