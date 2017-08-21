@@ -32,6 +32,8 @@ RUN cp -rf \
   /etc/ssl \
   /var/spool/postfix/etc/
 
-COPY install.sh /opt/install.sh
+EXPOSE 25:25
 
-CMD bash /opt/install.sh; /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
+COPY install-postfix-relay.sh /opt/install-postfix-relay.sh
+
+ENTRYPOINT ["/opt/install-postfix-relay.sh"]
