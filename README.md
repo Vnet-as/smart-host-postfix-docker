@@ -37,7 +37,6 @@ Run with following environment variables:
 ```
 docker run \
    -h smarthost.example.com \
-   -p 25:25 \
    -e HOSTNAME=smarthost.example.com \
    -e RELAY_HOST=mail.example.com \
    -e USERNAME=relay-acc@example.com \
