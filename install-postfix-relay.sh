@@ -2,7 +2,8 @@
 set -e
 
 # Postfix smart-host configuration via environment variables
-if [[ -n $USERNAME && -n $PASSWORD && -n $MYNETWORKS ]]; then
+if [[ -n $USERNAME && -n $PASSWORD && -n $MYNETWORKS && -n $RELAY_HOST && -n $HOSTNAME ]]; then
+    touch /etc/postfix/main.cf
     postconf -e "myhostname = $HOSTNAME"
     postconf -e "mydestination = $HOSTNAME localhost"
     postconf -e "relayhost = $RELAY_HOST"
@@ -15,4 +16,4 @@ if [[ -n $USERNAME && -n $PASSWORD && -n $MYNETWORKS ]]; then
     postconf -e "smtpd_relay_restrictions = permit_mynetworks defer_unauth_destination"
 fi
 
-exec "/usr/sbin/postfix -c /etc/postfix start"
+exec /usr/sbin/postfix -c /etc/postfix start
