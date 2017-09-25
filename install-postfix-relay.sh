@@ -16,4 +16,8 @@ if [[ -n $USERNAME && -n $PASSWORD && -n $MYNETWORKS && -n $RELAY_HOST && -n $HO
     postconf -e "smtpd_relay_restrictions = permit_mynetworks defer_unauth_destination"
 fi
 
-exec /usr/sbin/postfix -c /etc/postfix start
+if [ -z "$1" ]; then
+    exec /usr/lib/postfix/sbin/master -c /etc/postfix/ -d
+fi
+
+exec "$@"
