@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM debian:stretch
 MAINTAINER Ondrej Vasko
 
 ENV DEBIAN_FRONTEND noninteractive
