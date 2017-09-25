@@ -6,7 +6,6 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -y \
   locales \
   postfix \
-  supervisor \
   syslog-ng \
   syslog-ng-core 
 
