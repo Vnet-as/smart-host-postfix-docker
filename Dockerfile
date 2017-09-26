@@ -3,13 +3,12 @@ FROM debian:stretch
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG en_US.utf8
 
-RUN rm -rf /var/lib/apt/lists/* 
-
 RUN apt-get update && apt-get install -y \
   locales \
   postfix \
   syslog-ng \
-  syslog-ng-core 
+  syslog-ng-core \
+  && rm -rf /var/lib/apt/lists/*
 
 RUN localedef \
   -i en_US \
