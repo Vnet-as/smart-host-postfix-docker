@@ -1,5 +1,8 @@
 # Postfix Smart Host Docker
 
+[![Docker pulls](https://img.shields.io/docker/pulls/lirt/smart-host-postfix-docker.svg)](https://hub.docker.com/r/lirt/smart-host-postfix-docker)
+[![Docker automated build](https://img.shields.io/docker/automated/lirt/smart-host-postfix-docker.svg)](https://hub.docker.com/r/lirt/smart-host-postfix-docker)
+
 Smart Host (or Relay Host) is a server which routes all outgoing messages to specified remote domain. You can use it as a mail server for applications which do not support SASL authentication or for other needs.
 
 Customization of variable parameters such as relay server, mail account credentials and allowed IP addresses or networks is done using docker environment variables or configuration file.
